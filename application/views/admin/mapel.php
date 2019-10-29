@@ -3,7 +3,7 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">Mata Pelajaran
-        <!-- <span class="float-right">
+        <span class="float-right">
             <a href="#" class="btn btn-primary">
                 Tambah Materi
             </a>
