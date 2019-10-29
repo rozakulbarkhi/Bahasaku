@@ -1,0 +1,44 @@
+.bg {
+	background: #01579b;
+}
+
+.navbar-brand {
+	font-size: 20px;
+}
+
+.nav-item {
+	font-size: 15px;
+}
+
+.nav-link {
+	color: white;
+}
+
+.login-container {
+	float: right;
+}
+
+.list-footer {
+	color: white;
+}
+
+.img-fluid {
+	border: 2px solid #333;
+}
+
+.hr-about {
+	width: 250px;
+	border: 1px solid #343a40;
+}
+
+.hr-fitur {
+	width: 550px;
+	border: 1px solid #343a40;
+}
+
+.list-item {
+	display: inline-block;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	color: #01579b;
+}
