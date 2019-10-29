@@ -7,7 +7,7 @@
             <a href="#" class="btn btn-primary">
                 Tambah Materi
             </a>
-        </span> -->
+        </span>
     </h1>
     <div class="row">
         <div class="col-lg-8">
