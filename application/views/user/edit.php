@@ -12,7 +12,7 @@
                 </div>
             </div>
 
-            <?= form_open_multipart('admin/edit');  ?>
+            <?= form_open_multipart('user/edit');  ?>
 
             <div class="form-group row">
                 <label for="email" class="col-sm-2 col-form-label">Email</label>
@@ -31,10 +31,10 @@
                 <label for="gambar" class="col-sm-2 col-form-label">Gambar</label>
                 <div class="col-sm-10">
                     <div class="row">
-                        <div class="col-sm-5">
+                        <div class="col-sm-3">
                             <img src="<?= base_url('assets/img/') . $user['image'];  ?>" class="img-thumbnail">
                         </div>
-                        <div class="col-sm-7">
+                        <div class="col-sm-9">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="image" name="image">
                                 <label class="custom-file-label" for="image">Pilih gambar</label>
