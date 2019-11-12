@@ -22,9 +22,7 @@
                  <td><?= $p->name; ?></td>
                  <td><?= $p->email; ?></td>
                  <td><?= date('d/m/Y', $p->date_created); ?></td>
-                 <td>
-                     <?= anchor('admin/hapus_pengguna/' . $p->id, "<button class='btn btn-danger'>Hapus</button>");  ?>
-                 </td>
+                 <td><button class="btn btn-danger">Hapus</button></td>
              </tr>
 
          <?php } ?>

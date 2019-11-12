@@ -11,7 +11,7 @@
      </h1>
 
      <div class="row">
-         <div class="col-5">
+         <div class="col-lg-3">
              <?= $this->session->flashdata('message');  ?>
          </div>
      </div>
@@ -21,7 +21,7 @@
              <th>No</th>
              <th>Kelas</th>
              <th>Judul</th>
-             <th>URL</th>
+             <th>File</th>
              <th>Aksi</th>
          </tr>
 
@@ -33,7 +33,7 @@
                  <td><?= $no++;  ?></td>
                  <td><?= $m->kelas; ?></td>
                  <td><?= $m->judul; ?></td>
-                 <td><?= $m->url;  ?></td>
+                 <td><?= $m->file;  ?></td>
                  <td>
                      <?= anchor('admin/edit_materi/' . $m->id, "<button class='btn btn-info'>Edit</button>");  ?>
                      <?= anchor('admin/hapus_materi/' . $m->id, "<button class='btn btn-danger'>Hapus</button>"); ?>

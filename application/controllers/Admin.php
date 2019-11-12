@@ -54,6 +54,9 @@ class Admin extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
+        $this->form_validation->set_rules('option[]', 'Option', 'required', [
+            'required' => 'Kelas harus diisi!'
+        ]);
         $this->form_validation->set_rules('judul', 'Judul', 'required|trim', [
             'required' => 'Judul harus diisi!'
         ]);
@@ -67,19 +70,18 @@ class Admin extends CI_Controller
         } else {
             $kelas = $this->input->post('kelas');
             $judul = $this->input->post('judul');
-            $link  = $this->input->post('url');
-            $link  = preg_replace("#.*youtube\.com/watch\?v=#", "", $link);
+            $file  = $this->input->post('file');
 
             $data = array(
                 'kelas' => $kelas,
                 'judul' => $judul,
-                'url'   => $link
+                'file'  => $file
             );
 
             $this->m_data->input_data($data, 'materi');
 
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            Materi berhasil ditambahkan!</div>');
+            Materi sudah ditambahkan!</div>');
             redirect('admin/materi');
         }
     }
@@ -90,45 +92,6 @@ class Admin extends CI_Controller
             'id' => $id
         );
         $this->m_data->hapus_data($data, 'materi');
-        redirect('admin/materi');
-    }
-
-    public function edit_materi($id)
-    {
-        $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
-
-        $data['materi'] = $this->m_data->edit_data($id)->row();
-
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/admin/sidebar', $data);
-        $this->load->view('templates/admin/topbar', $data);
-        $this->load->view('admin/edit_materi', $data);
-        $this->load->view('templates/footer');
-    }
-
-    public function update()
-    {
-        $id    = $this->input->post('id');
-        $kelas = $this->input->post('kelas');
-        $judul = $this->input->post('judul');
-        $link  = $this->input->post('url');
-        $link  = preg_replace("#.*youtube\.com/watch\?v=#", "", $link);
-
-        $data = array(
-            'kelas' => $kelas,
-            'judul' => $judul,
-            'url'   => $link
-        );
-
-        $where = array(
-            'id' => $id
-        );
-
-        $this->m_data->update_data($where, $data, 'materi');
-
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            Materi berhasil diperbarui!</div>');
         redirect('admin/materi');
     }
 
@@ -196,14 +159,5 @@ class Admin extends CI_Controller
         $this->load->view('templates/admin/topbar', $data);
         $this->load->view('admin/pengguna', $data);
         $this->load->view('templates/footer');
-    }
-
-    public function hapus_pengguna($id)
-    {
-        $data = array(
-            'id' => $id
-        );
-        $this->m_data->hapus_data($data, 'user');
-        redirect('admin/pengguna');
     }
 }

@@ -31,7 +31,7 @@
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">SD</a>
                     <div class="dropdown-menu pl-4">
-                        <a href="<?= base_url('user/SD');  ?>" class="list-item">Kelas 1</a><br>
+                        <a href="#" class="list-item">Kelas 1</a><br>
                         <a href="#" class="list-item">Kelas 2</a><br>
                         <a href="#" class="list-item">Kelas 3</a><br>
                         <a href="#" class="list-item">Kelas 4</a><br>
@@ -56,6 +56,10 @@
                         <a href="#" class="list-item">Kelas 11</a><br>
                         <a href="#" class="list-item">Kelas 12</a><br>
                     </div>
+                </li>
+
+                <li class="nav-item pl-5">
+                    <a href="#" class="nav-link">Forum</a>
                 </li>
             </ul>
 
@@ -102,7 +106,80 @@
         </div>
     </div>
 
+    <!-- carousel -->
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/belajar.jpg" alt="slide pertama" width="100%">
+                <div class="carousel-caption">
+                    <h5>Perkembangan E-Learning di Indonesia</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit dolore alias reprehenderit pariatur facilis quos, sit soluta quibusdam nemo a quasi, odio, dolorem magni maiores saepe distinctio officiis voluptas. Officia.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/belajar.jpg" alt="slide kedua" width="100%">
+            </div>
+            <div class="carousel-item">
+                <img src="img/belajar.jpg" alt="slide ketiga" width="100%">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    <br><br><br><br>
+
     <div class="container">
+
+        <!-- testimoni -->
+        <h2 class="text-center"><strong>Testimoni</strong></h2>
+        <hr class="hr-about">
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="img-thumbnail">
+                    <img src="img/profile.jpg" alt="" class="img-fluid rounded-circle ml-5 mt-3" width="250">
+                    <div class="caption">
+                        <h3 class="text-center mt-3">Rozakul Barkhi</h3>
+                        <p class="text-center">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, perferendis inventore dolorem rerum et tempora sint nemo illum ab saepe, assumenda, amet illo deleniti officiis, voluptatem maxime atque vero sunt."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="img-thumbnail">
+                    <img src="img/profile.jpg" alt="" class="img-fluid rounded-circle ml-5 mt-3" width="250">
+                    <div class="caption">
+                        <h3 class="text-center mt-3">Rozakul Barkhi</h3>
+                        <p class="text-center">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, perferendis inventore dolorem rerum et tempora sint nemo illum ab saepe, assumenda, amet illo deleniti officiis, voluptatem maxime atque vero sunt."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="img-thumbnail">
+                    <img src="img/profile.jpg" alt="" class="img-fluid rounded-circle ml-5 mt-3" width="250">
+                    <div class="caption">
+                        <h3 class="text-center mt-3">Rozakul Barkhi</h3>
+                        <p class="text-center">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, perferendis inventore dolorem rerum et tempora sint nemo illum ab saepe, assumenda, amet illo deleniti officiis, voluptatem maxime atque vero sunt."</p>
+                    </div>
+                </div>
+            </div>
+        </div><br><br><br>
 
         <h2 class="text-center"><strong>Kenapa harus memilih kami?</strong></h2>
         <hr class="hr-fitur">
