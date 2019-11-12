@@ -1,4 +1,3 @@
-<!-- Begin Page Content -->
 <div class="container-fluid">
 
     <!-- Page Heading -->
@@ -10,9 +9,10 @@
     <div class="row">
         <div class="col-lg-8">
 
-            <?= form_open_multipart('admin/tambah'); ?>
+            <?= form_open_multipart('admin/update'); ?>
 
             <div class="form-group row">
+                <input type="hidden" name="id" value="<?= $materi->id; ?>">
                 <label for="kelas" class="col-sm-3 col-form-label">Kelas</label>
                 <div class="col-sm-9">
                     <select class="custom-select" name="kelas">
@@ -27,14 +27,14 @@
             <div class="form-group row">
                 <label for="judul" class="col-sm-3 col-form-label">Judul</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukkan judul materi.." value="<?= set_value('judul');  ?>">
+                    <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukkan judul materi.." value="<?= $materi->judul;  ?>">
                     <?= form_error('judul', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="judul" class="col-sm-3 col-form-label">Masukkan URL</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" id="url" name="url" placeholder="Masukkan URL.." value="<?= set_value('url');  ?>">
+                    <input type="text" class="form-control" id="url" name="url" placeholder="Masukkan URL.." value="<?= $materi->url; ?>">
                     <?= form_error('url', '<small class="text-danger pl-3">', '</small>'); ?>
                 </div>
             </div>
@@ -48,8 +48,8 @@
             <?= form_close();  ?>
 
         </div>
-
     </div>
+
 
 </div>
 <!-- /.container-fluid -->

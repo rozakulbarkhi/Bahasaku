@@ -57,10 +57,6 @@
             <a href="#" class="list-item">Kelas 12</a><br>
           </div>
         </li>
-
-        <li class="nav-item pl-5">
-          <a href="#" class="nav-link">Forum</a>
-        </li>
       </ul>
 
       <!-- Login -->
