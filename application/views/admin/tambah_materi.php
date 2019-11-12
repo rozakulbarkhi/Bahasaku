@@ -22,7 +22,7 @@
                                 echo '<option value="' . $i . '">' . $i . '</option>';
                             } ?>
                         </select>
-                        <?= form_error('option[]', '<small class="text-danger pl-3">', '</small>'); ?>
+                        <?= form_error('kelas', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -33,12 +33,10 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="file" class="col-sm-3 col-form-label">Masukkan Materi</label>
+                    <label for="url" class="col-sm-3 col-form-label">Masukkan URL</label>
                     <div class="col-sm-9">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="file" name="file">
-                            <label class="custom-file-label" for="file">Pilih file</label>
-                        </div>
+                        <input type="text" class="form-control" id="url" name="url" placeholder="Masukkan link URL..">
+                        <?= form_error('judul', '<small class="text-danger pl-3">', '</small>'); ?>
                     </div>
                 </div>
                 <div class="form-group row justify-content-end">

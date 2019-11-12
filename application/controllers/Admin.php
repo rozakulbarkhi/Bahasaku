@@ -54,7 +54,7 @@ class Admin extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
-        $this->form_validation->set_rules('option[]', 'Option', 'required', [
+        $this->form_validation->set_rules('kelas', 'Kelas', 'required', [
             'required' => 'Kelas harus diisi!'
         ]);
         $this->form_validation->set_rules('judul', 'Judul', 'required|trim', [
@@ -70,18 +70,19 @@ class Admin extends CI_Controller
         } else {
             $kelas = $this->input->post('kelas');
             $judul = $this->input->post('judul');
-            $file  = $this->input->post('file');
+            $link  = $this->input->post('url');
+            $link  = preg_replace("#.*youtube\.com/watch\?v=#", "", $link);
 
             $data = array(
                 'kelas' => $kelas,
                 'judul' => $judul,
-                'file'  => $file
+                'url'   => $link,
             );
 
             $this->m_data->input_data($data, 'materi');
 
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            Materi sudah ditambahkan!</div>');
+            Materi berhasil ditambahkan!</div>');
             redirect('admin/materi');
         }
     }
@@ -92,6 +93,48 @@ class Admin extends CI_Controller
             'id' => $id
         );
         $this->m_data->hapus_data($data, 'materi');
+
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+        Materi berhasil dihapus!</div>');
+        redirect('admin/materi');
+    }
+
+    public function edit_materi($id)
+    {
+        $data['user'] = $this->db->get_where('user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+
+        $data['materi'] = $this->m_data->edit_data($id)->row();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/admin/sidebar', $data);
+        $this->load->view('templates/admin/topbar', $data);
+        $this->load->view('admin/edit_materi', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function update()
+    {
+        $id    = $this->input->post('id');
+        $kelas = $this->input->post('kelas');
+        $judul = $this->input->post('judul');
+        $link  = $this->input->post('url');
+        $link  = preg_replace("#.*youtube\.com/watch\?v=#", "", $link);
+
+        $data = array(
+            'kelas' => $kelas,
+            'judul' => $judul,
+            'url'   => $link
+        );
+
+        $where = array(
+            'id' => $id
+        );
+
+        $this->m_data->update_data($where, $data, 'materi');
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Materi berhasil diperbarui!</div>');
         redirect('admin/materi');
     }
 
@@ -159,5 +202,17 @@ class Admin extends CI_Controller
         $this->load->view('templates/admin/topbar', $data);
         $this->load->view('admin/pengguna', $data);
         $this->load->view('templates/footer');
+    }
+
+    public function hapus_pengguna($id)
+    {
+        $data = array(
+            'id' => $id
+        );
+        $this->m_data->hapus_data($data, 'user');
+
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Data pengguna sudah dihapus!!</div>');
+        redirect('admin/pengguna');
     }
 }
