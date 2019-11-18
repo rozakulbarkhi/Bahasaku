@@ -152,11 +152,11 @@
 
     <div class="row">
       <div class="col-md-6">
-        <img src="img/gratis.jpg" alt="">
+        <img src="img/gratiss.png" alt="">
       </div>
 
       <div class="col-md-6">
-        <h4 class="pt-5 pr-5"><strong>Gratis</strong></h4>
+        <h4 class="pt-5 pr-5"><strong>AAAAA</strong></h4>
         <p class="pr-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ducimus quam illum similique cumque ratione cupiditate dolorem voluptate pariatur hic, rerum, et tempora earum iure ullam, id ea numquam, soluta!</p>
       </div>
     </div>
