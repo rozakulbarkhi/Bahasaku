@@ -54,11 +54,14 @@ class Admin extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
-        $this->form_validation->set_rules('kelas', 'Kelas', 'required', [
+        $this->form_validation->set_rules('kelas', 'Kelas', 'required|trim', [
             'required' => 'Kelas harus diisi!'
         ]);
         $this->form_validation->set_rules('judul', 'Judul', 'required|trim', [
             'required' => 'Judul harus diisi!'
+        ]);
+        $this->form_validation->set_rules('url', 'URL', 'required|trim', [
+            'required' => 'URL harus diisi!'
         ]);
 
         if ($this->form_validation->run() == FALSE) {
@@ -72,11 +75,27 @@ class Admin extends CI_Controller
             $judul = $this->input->post('judul');
             $link  = $this->input->post('url');
             $link  = preg_replace("#.*youtube\.com/watch\?v=#", "", $link);
+            $file  = $_FILES['file'];
+
+            if ($file = '') { } else {
+                $config['allowed_types']    = 'pdf|doc';
+                $config['max_size']         = '2048';
+                $config['upload_path']      = './assets/file/';
+
+                $this->load->library('upload', $config);
+
+                if (!$this->upload->do_upload('file')) {
+                    echo $this->upload->display_errors();
+                } else {
+                    $file = $this->upload->data('file_name');
+                }
+            }
 
             $data = array(
                 'kelas' => $kelas,
                 'judul' => $judul,
                 'url'   => $link,
+                'file'  => $file
             );
 
             $this->m_data->input_data($data, 'materi');
@@ -115,27 +134,63 @@ class Admin extends CI_Controller
 
     public function update()
     {
-        $id    = $this->input->post('id');
-        $kelas = $this->input->post('kelas');
-        $judul = $this->input->post('judul');
-        $link  = $this->input->post('url');
-        $link  = preg_replace("#.*youtube\.com/watch\?v=#", "", $link);
+        $data['user'] = $this->db->get_where('user', ['email' =>
+        $this->session->userdata('email')])->row_array();
 
-        $data = array(
-            'kelas' => $kelas,
-            'judul' => $judul,
-            'url'   => $link
-        );
+        $this->form_validation->set_rules('kelas', 'Kelas', 'required', [
+            'required' => 'Kelas harus diisi!'
+        ]);
+        $this->form_validation->set_rules('judul', 'Judul', 'required|trim', [
+            'required' => 'Judul harus diisi!'
+        ]);
+        $this->form_validation->set_rules('url', 'URL', 'required|trim', [
+            'required' => 'URL harus diisi!'
+        ]);
 
-        $where = array(
-            'id' => $id
-        );
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/admin/sidebar', $data);
+            $this->load->view('templates/admin/topbar', $data);
+            $this->load->view('admin/edit_materi', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $id    = $this->input->post('id');
+            $kelas = $this->input->post('kelas');
+            $judul = $this->input->post('judul');
+            $link  = $this->input->post('url');
+            $link  = preg_replace("#.*youtube\.com/watch\?v=#", "", $link);
+            $file  = $_FILES['file'];
 
-        $this->m_data->update_data($where, $data, 'materi');
+            if ($file = '') { } else {
+                $config['allowed_types']    = 'pdf|doc';
+                $config['max_size']         = '2048';
+                $config['upload_path']      = './assets/file/';
 
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            Materi berhasil diperbarui!</div>');
-        redirect('admin/materi');
+                $this->load->library('upload', $config);
+
+                if (!$this->upload->do_upload('file')) {
+                    echo $this->upload->display_errors();
+                } else {
+                    $file = $this->upload->data('file_name');
+                }
+            }
+
+            $data = array(
+                'kelas' => $kelas,
+                'judul' => $judul,
+                'url'   => $link,
+                'file'  => $file
+            );
+
+            $where = array(
+                'id' => $id
+            );
+
+            $this->m_data->update_data($where, $data, 'materi');
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                Materi berhasil diperbarui!</div>');
+            redirect('admin/materi');
+        }
     }
 
     public function edit()

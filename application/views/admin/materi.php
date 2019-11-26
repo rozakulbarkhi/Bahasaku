@@ -22,6 +22,7 @@
              <th>Kelas</th>
              <th>Judul</th>
              <th>File</th>
+             <th>Link</th>
              <th>Aksi</th>
          </tr>
 
@@ -33,21 +34,15 @@
                  <td><?= $no++;  ?></td>
                  <td><?= $m->kelas; ?></td>
                  <td><?= $m->judul; ?></td>
+                 <th><?= $m->file; ?></th>
                  <td><?= $m->url;  ?></td>
                  <td>
                      <?= anchor('admin/edit_materi/' . $m->id, "<button class='btn btn-info'>Edit</button>");  ?>
                      <?= anchor('admin/hapus_materi/' . $m->id, "<button class='btn btn-danger'>Hapus</button>"); ?>
                  </td>
              </tr>
-
          <?php } ?>
-
-
      </table>
-
-
-
-
 
  </div>
  <!-- /.container-fluid -->
