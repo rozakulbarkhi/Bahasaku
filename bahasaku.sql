@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Nov 2019 pada 03.06
--- Versi server: 10.3.16-MariaDB
--- Versi PHP: 7.3.6
+-- Generation Time: Nov 26, 2019 at 04:56 AM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,27 +25,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `materi`
+-- Table structure for table `materi`
 --
 
 CREATE TABLE `materi` (
   `id` int(11) NOT NULL,
   `kelas` varchar(256) NOT NULL,
   `judul` varchar(256) NOT NULL,
-  `url` varchar(256) NOT NULL
+  `url` varchar(256) NOT NULL,
+  `file` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `materi`
+-- Dumping data for table `materi`
 --
 
-INSERT INTO `materi` (`id`, `kelas`, `judul`, `url`) VALUES
-(86, '3', 'Membaca dan Menulis 1', '4Xyu95TEJZ0');
+INSERT INTO `materi` (`id`, `kelas`, `judul`, `url`, `file`) VALUES
+(99, 'Masukkan Kelas', 'Pengenalan Huruf 2', 'UZfF0fKKHsQ', 'Progress_Project1.pdf');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -60,7 +61,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
@@ -71,7 +72,7 @@ INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_a
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_role`
+-- Table structure for table `user_role`
 --
 
 CREATE TABLE `user_role` (
@@ -80,7 +81,7 @@ CREATE TABLE `user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user_role`
+-- Dumping data for table `user_role`
 --
 
 INSERT INTO `user_role` (`id`, `role`) VALUES
@@ -92,41 +93,41 @@ INSERT INTO `user_role` (`id`, `role`) VALUES
 --
 
 --
--- Indeks untuk tabel `materi`
+-- Indexes for table `materi`
 --
 ALTER TABLE `materi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user_role`
+-- Indexes for table `user_role`
 --
 ALTER TABLE `user_role`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `materi`
+-- AUTO_INCREMENT for table `materi`
 --
 ALTER TABLE `materi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT untuk tabel `user_role`
+-- AUTO_INCREMENT for table `user_role`
 --
 ALTER TABLE `user_role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
