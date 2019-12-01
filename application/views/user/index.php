@@ -127,4 +127,3 @@
 		</div> <!-- akhir kontainer -->
 	</div>
 	</div> <!-- akhir kontainer -->
-	<br><br>
