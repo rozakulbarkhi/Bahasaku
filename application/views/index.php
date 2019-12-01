@@ -22,7 +22,7 @@
     <div class="container">
       <!-- brand -->
       <a href="<?= base_url('user'); ?>">
-        <img src="<?= base_url('assets/img/logo.png'); ?>" alt="" class="pr-5">
+        <img src="<?= base_url('assets/img/bahasakulogo_blue.png'); ?>" width="150"  alt="" class="pr-5">
       </a>
 
       <!-- link konten -->
