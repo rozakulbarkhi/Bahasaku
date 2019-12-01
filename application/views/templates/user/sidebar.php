@@ -5,7 +5,7 @@
      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('user');  ?>">
          <div class="sidebar-brand-icon rotate-n-15">
          </div>
-         <img src="<?= base_url('img/logo.png'); ?>" alt="">
+         <img src="<?= base_url('assets/img/logo.png'); ?>" alt="">
      </a>
 
      <!-- Divider -->

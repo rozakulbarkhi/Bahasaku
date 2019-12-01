@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
-  <link rel="stylesheet" href="<?= base_url() . 'assets/css/style.css'; ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
 
   <title>Bahasaku</title>
 </head>
@@ -27,38 +27,36 @@
 
       <!-- link konten -->
       <!-- SD -->
-      <form action="" method="POST">
-        <ul class="nav navbar-nav pl-5">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown">SD</a>
-            <div class="dropdown-menu pl-4">
-              <button class="list-item btn btn-white" value="1"><a href="<?= base_url('user/satu'); ?>">Kelas 1</a></button><br>
-              <button class="list-item btn btn-white" value="2"><a href="<?= base_url('user/dua'); ?>">Kelas 2</a></button><br>
-              <button class="list-item btn btn-white" value="3"><a href="<?= base_url('user/tiga'); ?>">Kelas 3</a></button><br>
-              <button class="list-item btn btn-white" value="4"><a href="<?= base_url('user/empat'); ?>">Kelas 4</a></button><br>
-              <button class="list-item btn btn-white" value="5"><a href="<?= base_url('user/lima'); ?>">Kelas 5</a></button><br>
-              <button class="list-item btn btn-white" value="6"><a href="<?= base_url('user/enam'); ?>">Kelas 6</a></button><br>
-            </div>
-          </li>
-          <li class="nav-item dropdown pl-5">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown">SMP</a>
-            <div class="dropdown-menu pl-4">
-              <button class="list-item btn btn-white" value="7"><a href="<?= base_url('user/tujuh'); ?>">Kelas 7</a></button><br>
-              <button class="list-item btn btn-white" value="8"><a href="<?= base_url('user/delapan'); ?>">Kelas 8</a></button><br>
-              <button class="list-item btn btn-white" value="9"><a href="<?= base_url('user/sembilan'); ?>">Kelas 9</a></button><br>
-            </div>
-          </li>
+      <ul class="nav navbar-nav pl-5">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown">SD</a>
+          <div class="dropdown-menu pl-4">
+            <button class="list-item btn btn-white" value="1"><a href="<?= base_url('user/satu'); ?>">Kelas 1</a></button><br>
+            <button class="list-item btn btn-white" value="2"><a href="<?= base_url('user/dua'); ?>">Kelas 2</a></button><br>
+            <button class="list-item btn btn-white" value="3"><a href="<?= base_url('user/tiga'); ?>">Kelas 3</a></button><br>
+            <button class="list-item btn btn-white" value="4"><a href="<?= base_url('user/empat'); ?>">Kelas 4</a></button><br>
+            <button class="list-item btn btn-white" value="5"><a href="<?= base_url('user/lima'); ?>">Kelas 5</a></button><br>
+            <button class="list-item btn btn-white" value="6"><a href="<?= base_url('user/enam'); ?>">Kelas 6</a></button><br>
+          </div>
+        </li>
+        <li class="nav-item dropdown pl-5">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown">SMP</a>
+          <div class="dropdown-menu pl-4">
+            <button class="list-item btn btn-white" value="7"><a href="<?= base_url('user/tujuh'); ?>">Kelas 7</a></button><br>
+            <button class="list-item btn btn-white" value="8"><a href="<?= base_url('user/delapan'); ?>">Kelas 8</a></button><br>
+            <button class="list-item btn btn-white" value="9"><a href="<?= base_url('user/sembilan'); ?>">Kelas 9</a></button><br>
+          </div>
+        </li>
 
-          <li class="nav-item dropdown pl-5">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown">SMA</a>
-            <div class="dropdown-menu pl-4">
-              <button class="list-item btn btn-white" value="10"><a href="<?= base_url('user/sepuluh'); ?>">Kelas 10</a></button><br>
-              <button class="list-item btn btn-white" value="11"><a href="<?= base_url('user/sebelas'); ?>">Kelas 11</a></button><br>
-              <button class="list-item btn btn-white" value="12"><a href="<?= base_url('user/duabelas'); ?>">Kelas 12</a></button><br>
-            </div>
-          </li>
-        </ul>
-      </form>
+        <li class="nav-item dropdown pl-5">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown">SMA</a>
+          <div class="dropdown-menu pl-4">
+            <button class="list-item btn btn-white" value="10"><a href="<?= base_url('user/sepuluh'); ?>">Kelas 10</a></button><br>
+            <button class="list-item btn btn-white" value="11"><a href="<?= base_url('user/sebelas'); ?>">Kelas 11</a></button><br>
+            <button class="list-item btn btn-white" value="12"><a href="<?= base_url('user/duabelas'); ?>">Kelas 12</a></button><br>
+          </div>
+        </li>
+      </ul>
 
       <!-- Login -->
       <ul class="nav navbar-nav ml-auto">
