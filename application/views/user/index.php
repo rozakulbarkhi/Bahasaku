@@ -1,16 +1,40 @@
 <body>
-	<br><br><br><br><br>
-	<!-- Konten -->
-	<div class="container">
-		<div class="jumbotron">
-			<h1 class="display-4">Hello, world!</h1>
-			<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-			<hr class="my-4">
-			<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-			<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+	<!-- carousel -->
+	<div id="demo" class="carousel slide" data-ride="carousel">
+
+		<!-- Indicators -->
+		<ul class="carousel-indicators">
+			<li data-target="#demo" data-slide-to="0" class="active"></li>
+			<li data-target="#demo" data-slide-to="1"></li>
+			<li data-target="#demo" data-slide-to="2"></li>
+		</ul>
+
+		<!-- The slideshow -->
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="<?= base_url('assets/img/belajar.jpg'); ?>" alt="slide pertama" width="100%">
+				<div class="carousel-caption">
+					<h5>Perkembangan E-Learning di Indonesia</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit dolore alias reprehenderit pariatur facilis quos, sit soluta quibusdam nemo a quasi, odio, dolorem magni maiores saepe distinctio officiis voluptas. Officia.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="<?= base_url('assets/img/belajar.jpg'); ?>" alt="slide kedua" width="100%">
+			</div>
+			<div class="carousel-item">
+				<img src="<?= base_url('assets/img/belajar.jpg'); ?>" alt="slide ketiga" width="100%">
+			</div>
 		</div>
-	</div> <!-- akhir -->
-	</div><br><br>
+
+		<!-- Left and right controls -->
+		<a class="carousel-control-prev" href="#demo" data-slide="prev">
+			<span class="carousel-control-prev-icon"></span>
+		</a>
+		<a class="carousel-control-next" href="#demo" data-slide="next">
+			<span class="carousel-control-next-icon"></span>
+		</a>
+	</div>
+	<br><br><br>
 
 	<div class="container">
 		<h2 class="text-center"><strong>Kenapa harus memilih kami?</strong></h2>

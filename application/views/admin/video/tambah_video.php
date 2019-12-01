@@ -2,7 +2,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Tambah Materi
+    <h1 class="h3 mb-4 text-gray-800">Tambah Video
         <span class="float-right">
             <a href="<?= base_url('admin/video'); ?>" class="btn btn-primary">Kembali</a>
         </span>
