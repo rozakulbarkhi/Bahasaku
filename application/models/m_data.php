@@ -14,12 +14,6 @@ class m_data extends CI_Model
         return $this->db->get('materi')->result_array();
     }
 
-    function materi_satu()
-    {
-
-        return $this->db->get_where('materi', ['kelas' => 1])->result_array();
-    }
-
     function input_data($data, $table)
     {
         $this->db->insert($table, $data);
