@@ -112,36 +112,38 @@
 
   <div class="container">
     <!-- testimoni -->
-    <h2 class="text-center"><strong>Testimoni</strong></h2>
+    <h2 class="text-center"><strong>Kata Mereka?</strong></h2>
     <hr class="hr-about">
     <br>
     <div class="row">
       <div class="col-md-4">
         <div class="img-thumbnail">
-          <img src="<?= base_url('assets/img/profile.jpg'); ?>" alt="" class="img-fluid rounded-circle ml-5 mt-3" width="250">
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/1200px-SpongeBob_SquarePants_character.svg.png" alt="" class="img-fluid rounded-circle ml-5 mt-3" width="250">
+          <br><br>
           <div class="caption">
-            <h3 class="text-center mt-3">Rozakul Barkhi</h3>
-            <p class="text-center">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, perferendis inventore dolorem rerum et tempora sint nemo illum ab saepe, assumenda, amet illo deleniti officiis, voluptatem maxime atque vero sunt."</p>
+            <p class="text-center">"Dengan materi yang berkualitas dari <i>Bahasaku</i>,
+              saya bisa lebih mudah memahami mata pelajaran Bahasa Indonesia" - <strong>Spongebob</strong>, <i>Ilmu Kelautan</i></p>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="img-thumbnail">
-          <img src="<?= base_url('assets/img/profile.jpg'); ?>" alt="" class="img-fluid rounded-circle ml-5 mt-3" width="250">
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Patrick_Star.svg/1200px-Patrick_Star.svg.png" alt="" class="img-fluid rounded-circle ml-5 mt-3" width="250">
+          <br><br>
           <div class="caption">
-            <h3 class="text-center mt-3">Rozakul Barkhi</h3>
-            <p class="text-center">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, perferendis inventore dolorem rerum et tempora sint nemo illum ab saepe, assumenda, amet illo deleniti officiis, voluptatem maxime atque vero sunt."</p>
+            <p class="text-center">"<i>Bahasaku</i> menerapkan metode pembelajaran yang berfokus pada konsep,
+              jadi tidak hanya hafalan saja. Saya suka! - <strong>Patrick Star</strong>, <i>Teknik Menyelam</i>"</p>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="img-thumbnail">
-          <img src="<?= base_url('assets/img/profile.jpg'); ?>" alt="" class="img-fluid rounded-circle ml-5 mt-3" width="250">
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Squidward_Tentacles.svg/1200px-Squidward_Tentacles.svg.png" alt="" class="img-fluid rounded-circle ml-5 mt-3" width="250">
+          <br><br>
           <div class="caption">
-            <h3 class="text-center mt-3">Rozakul Barkhi</h3>
-            <p class="text-center">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, perferendis inventore dolorem rerum et tempora sint nemo illum ab saepe, assumenda, amet illo deleniti officiis, voluptatem maxime atque vero sunt."</p>
+            <p class="text-center">"Belajar di <i>Bahasaku</i> mengajarkanku apa artinya kenyamanan dan kesempurnaannya bahasa Indonesia. - <strong>Squidward</strong>, <i>Teknik budidaya ubur-ubur</i>"</p>
           </div>
         </div>
       </div>
