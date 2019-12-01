@@ -95,7 +95,7 @@ class User extends CI_Controller
     public function satu()
     {
         $data['video'] = $this->m_SD->satu();
-        $data['materi'] = $this->db->get_where('materi', ['kelas' => 1])->result_array();
+        $data['materi'] = $this->m_SD->satu();
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
