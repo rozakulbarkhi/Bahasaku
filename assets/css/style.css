@@ -14,6 +14,26 @@
 	color: white;
 }
 
+.nav>li>a:hover {
+	color: white;
+}
+
+.nav>li>div>button>a {
+	text-decoration: none;
+}
+
+.nav>li>div>button>a:hover {
+	color: #01579b;
+}
+
+.row>div>a {
+	text-decoration: none;
+}
+
+.foot>div>a:hover {
+	color: white;
+}
+
 .login-container {
 	float: right;
 }
@@ -36,6 +56,7 @@
 	border: 1px solid #343a40;
 }
 
-.list-item {
-	color: wheat;
+.carousel {
+	font-size: 20px;
+	color: black;
 }

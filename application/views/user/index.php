@@ -14,8 +14,8 @@
 			<div class="carousel-item active">
 				<img src="<?= base_url('assets/img/belajar.jpg'); ?>" alt="slide pertama" width="100%">
 				<div class="carousel-caption">
-					<h5>Perkembangan E-Learning di Indonesia</h5>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit dolore alias reprehenderit pariatur facilis quos, sit soluta quibusdam nemo a quasi, odio, dolorem magni maiores saepe distinctio officiis voluptas. Officia.</p>
+					<h5 class="carousel"> <strong> Perkembangan E-Learning di Indonesia</strong></h5>
+					<p class="carousel">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit dolore alias reprehenderit pariatur facilis quos, sit soluta quibusdam nemo a quasi, odio, dolorem magni maiores saepe distinctio officiis voluptas. Officia.</p>
 				</div>
 			</div>
 			<div class="carousel-item">

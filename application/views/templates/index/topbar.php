@@ -12,9 +12,9 @@
         <form action="" method="POST">
             <ul class="nav navbar-nav pl-5">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">SD</a>
+                    <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">SD</a>
                     <div class="dropdown-menu pl-4">
-                        <button class="list-item btn btn-white" value="1"><a href="<?= base_url('user/satu'); ?>">Kelas 1</a></button><br>
+                        <button class="list-item btn btn-white" value="1"><a class="kelas" href="<?= base_url('user/satu'); ?>">Kelas 1</a></button><br>
                         <button class="list-item btn btn-white" value="2"><a href="<?= base_url('user/dua'); ?>">Kelas 2</a></button><br>
                         <button class="list-item btn btn-white" value="3"><a href="<?= base_url('user/tiga'); ?>">Kelas 3</a></button><br>
                         <button class="list-item btn btn-white" value="4"><a href="<?= base_url('user/empat'); ?>">Kelas 4</a></button><br>
@@ -23,7 +23,7 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown pl-5">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">SMP</a>
+                    <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">SMP</a>
                     <div class="dropdown-menu pl-4">
                         <button class="list-item btn btn-white" value="7"><a href="<?= base_url('user/tujuh'); ?>">Kelas 7</a></button><br>
                         <button class="list-item btn btn-white" value="8"><a href="<?= base_url('user/delapan'); ?>">Kelas 8</a></button><br>
@@ -32,7 +32,7 @@
                 </li>
 
                 <li class="nav-item dropdown pl-5">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">SMA</a>
+                    <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">SMA</a>
                     <div class="dropdown-menu pl-4">
                         <button class="list-item btn btn-white" value="10"><a href="<?= base_url('user/sepuluh'); ?>">Kelas 10</a></button><br>
                         <button class="list-item btn btn-white" value="11"><a href="<?= base_url('user/sebelas'); ?>">Kelas 11</a></button><br>

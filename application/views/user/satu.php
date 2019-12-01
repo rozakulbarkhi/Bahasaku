@@ -10,7 +10,7 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/<?= $link; ?>" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="col-5">
-            <h5>Materi Kelas 2 SD</h5>
+            <h5>Materi Kelas 1 SD</h5>
             <?php
             foreach ($video as $v) : ?>
                 <?php

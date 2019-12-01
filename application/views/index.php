@@ -7,10 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" href="assets/img/icon.png" type="image/png">
   <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-
-  <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
 
   <title>Bahasaku</title>
 </head>
@@ -25,11 +24,17 @@
         <img src="<?= base_url('assets/img/logo.png'); ?>" alt="" class="pr-5">
       </a>
 
+      <style>
+        .cek:hover {
+          color: white;
+        }
+      </style>
+
       <!-- link konten -->
       <!-- SD -->
       <ul class="nav navbar-nav pl-5">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown">SD</a>
+          <a href="" class="nav-link dropdown-toggle cek" data-toggle="dropdown">SD</a>
           <div class="dropdown-menu pl-4">
             <button class="list-item btn btn-white" value="1"><a href="<?= base_url('user/satu'); ?>">Kelas 1</a></button><br>
             <button class="list-item btn btn-white" value="2"><a href="<?= base_url('user/dua'); ?>">Kelas 2</a></button><br>
@@ -39,8 +44,9 @@
             <button class="list-item btn btn-white" value="6"><a href="<?= base_url('user/enam'); ?>">Kelas 6</a></button><br>
           </div>
         </li>
+
         <li class="nav-item dropdown pl-5">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown">SMP</a>
+          <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">SMP</a>
           <div class="dropdown-menu pl-4">
             <button class="list-item btn btn-white" value="7"><a href="<?= base_url('user/tujuh'); ?>">Kelas 7</a></button><br>
             <button class="list-item btn btn-white" value="8"><a href="<?= base_url('user/delapan'); ?>">Kelas 8</a></button><br>
@@ -49,7 +55,7 @@
         </li>
 
         <li class="nav-item dropdown pl-5">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown">SMA</a>
+          <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">SMA</a>
           <div class="dropdown-menu pl-4">
             <button class="list-item btn btn-white" value="10"><a href="<?= base_url('user/sepuluh'); ?>">Kelas 10</a></button><br>
             <button class="list-item btn btn-white" value="11"><a href="<?= base_url('user/sebelas'); ?>">Kelas 11</a></button><br>
@@ -82,8 +88,8 @@
       <div class="carousel-item active">
         <img src="<?= base_url('assets/img/belajar.jpg'); ?>" alt="slide pertama" width="100%">
         <div class="carousel-caption">
-          <h5>Perkembangan E-Learning di Indonesia</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit dolore alias reprehenderit pariatur facilis quos, sit soluta quibusdam nemo a quasi, odio, dolorem magni maiores saepe distinctio officiis voluptas. Officia.</p>
+          <h5 class="carousel"> <strong> Perkembangan E-Learning di Indonesia</strong></h5>
+          <p class="carousel">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit dolore alias reprehenderit pariatur facilis quos, sit soluta quibusdam nemo a quasi, odio, dolorem magni maiores saepe distinctio officiis voluptas. Officia.</p>
         </div>
       </div>
       <div class="carousel-item">
@@ -183,7 +189,7 @@
         <img src="<?= base_url('assets/img/random.png'); ?>" width="250" alt="">
       </div>
       <div class="col-md-6">
-        <h4 class="pt-5 pr-5"><strong>Menigkatkan Imajinasi dan Prestasi</strong></h4>
+        <h4 class="pt-5 pr-5"><strong>Meningkatkan Imajinasi dan Prestasi</strong></h4>
         <p class="pr-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ducimus quam illum
           similique cumque ratione cupiditate dolorem voluptate pariatur hic, rerum, et tempora earum iure
           ullam, id ea numquam, soluta!</p>
@@ -196,11 +202,10 @@
   <footer class="page-footer bg">
     <div class="container">
       <!-- logo -->
-      <div class="row">
+      <div class="row foot">
         <div class="col-md-4 pt-5">
-          <a href="#"><img src="img/logo.png" alt=""></a><br><br>
+          <a href="#"><img src="<?= base_url() . 'assets/img/logo.png'; ?> " alt=""></a><br><br>
           <a href="#" class="list-footer">Beranda -</a>
-          <a href="#" class="list-footer">Forum -</a>
           <a href="#" class="list-footer">Testimoni -</a>
           <a href="#" class="list-footer">Kontak</a><br>
           <p class="list-footer"> Bahasaku &copy; 2019</p>
@@ -230,7 +235,7 @@
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 
 </body>

@@ -2,11 +2,10 @@
 <footer class="page-footer bg">
     <div class="container">
         <!-- logo -->
-        <div class="row">
+        <div class="row foot">
             <div class="col-md-4 pt-5">
                 <a href=""><img src="<?= base_url('assets/img/logo.png'); ?>" alt=""></a><br><br>
                 <a href="#" class="list-footer">Beranda -</a>
-                <a href="#" class="list-footer">Forum -</a>
                 <a href="#" class="list-footer">Testimoni -</a>
                 <a href="#" class="list-footer">Kontak</a><br>
                 <p class="list-footer"> Bahasaku &copy; 2019</p>
