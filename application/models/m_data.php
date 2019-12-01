@@ -11,7 +11,13 @@ class m_data extends CI_Model
     function ambil_data_materi()
     {
 
-        return $this->db->get('materi');
+        return $this->db->get('materi')->result_array();
+    }
+
+    function materi_satu()
+    {
+
+        return $this->db->get_where('materi', ['kelas' => 1])->result_array();
     }
 
     function input_data($data, $table)
@@ -31,7 +37,7 @@ class m_data extends CI_Model
         $this->db->from('materi');
         $this->db->where('id', $id);
 
-        return $this->db->get();
+        return $this->db->get()->result_array();
     }
 
     function update_data($where, $data, $table)

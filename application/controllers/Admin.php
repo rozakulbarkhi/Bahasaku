@@ -9,6 +9,7 @@ class Admin extends CI_Controller
         belum_login();
         cek_admin();
         $this->load->model('m_data');
+        $this->load->model('m_video');
     }
 
     public function index()
@@ -28,12 +29,26 @@ class Admin extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
-        $data['mapel'] = $this->m_data->ambil_data_materi('materi')->result();
+        $data['materi'] = $this->m_data->ambil_data_materi('materi');
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/admin/sidebar', $data);
         $this->load->view('templates/admin/topbar', $data);
-        $this->load->view('admin/materi', $data);
+        $this->load->view('admin/materi/materi', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function video()
+    {
+        $data['user'] = $this->db->get_where('user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+
+        $data['video'] = $this->m_video->ambil_data('video');
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/admin/sidebar', $data);
+        $this->load->view('templates/admin/topbar', $data);
+        $this->load->view('admin/video/video', $data);
         $this->load->view('templates/footer');
     }
 
@@ -45,36 +60,45 @@ class Admin extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('templates/admin/sidebar', $data);
         $this->load->view('templates/admin/topbar', $data);
-        $this->load->view('admin/tambah_materi', $data);
+        $this->load->view('admin/materi/tambah_materi', $data);
         $this->load->view('templates/footer');
     }
 
-    function tambah()
+    public function tambah_video()
     {
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
-        $this->form_validation->set_rules('kelas', 'Kelas', 'required|trim', [
-            'required' => 'Kelas harus diisi!'
-        ]);
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/admin/sidebar', $data);
+        $this->load->view('templates/admin/topbar', $data);
+        $this->load->view('admin/video/tambah_video', $data);
+        $this->load->view('templates/footer');
+    }
+
+    function tambah_mat()
+    {
+        $data['user'] = $this->db->get_where('user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+
         $this->form_validation->set_rules('judul', 'Judul', 'required|trim', [
             'required' => 'Judul harus diisi!'
         ]);
-        $this->form_validation->set_rules('url', 'URL', 'required|trim', [
-            'required' => 'URL harus diisi!'
-        ]);
+        if (empty($_FILES['file']['name'])) {
+            $this->form_validation->set_rules('file', 'File', 'required|trim', [
+                'required' => 'File harus diisi!'
+            ]);
+        }
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/admin/sidebar', $data);
             $this->load->view('templates/admin/topbar', $data);
-            $this->load->view('admin/tambah_materi', $data);
+            $this->load->view('admin/materi/tambah_materi', $data);
             $this->load->view('templates/footer');
         } else {
             $kelas = $this->input->post('kelas');
             $judul = $this->input->post('judul');
-            $link  = $this->input->post('url');
-            $link  = preg_replace("#.*youtube\.com/watch\?v=#", "", $link);
             $file  = $_FILES['file'];
 
             if ($file = '') { } else {
@@ -94,7 +118,6 @@ class Admin extends CI_Controller
             $data = array(
                 'kelas' => $kelas,
                 'judul' => $judul,
-                'url'   => $link,
                 'file'  => $file
             );
 
@@ -103,6 +126,44 @@ class Admin extends CI_Controller
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             Materi berhasil ditambahkan!</div>');
             redirect('admin/materi');
+        }
+    }
+
+    function tambah_vid()
+    {
+        $data['user'] = $this->db->get_where('user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+
+        $this->form_validation->set_rules('judul', 'Judul', 'required|trim', [
+            'required' => 'Judul harus diisi!'
+        ]);
+        $this->form_validation->set_rules('kode', 'URL', 'required|trim', [
+            'required' => 'URL harus diisi!'
+        ]);
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/admin/sidebar', $data);
+            $this->load->view('templates/admin/topbar', $data);
+            $this->load->view('admin/video/tambah_video', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $kelas = $this->input->post('kelas');
+            $judul = $this->input->post('judul');
+            $link  = $this->input->post('kode');
+            $link  = preg_replace("#.*youtube\.com/watch\?v=#", "", $link);
+
+            $data = array(
+                'kelas' => $kelas,
+                'judul' => $judul,
+                'kode'   => $link,
+            );
+
+            $this->m_data->input_data($data, 'video');
+
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Video berhasil ditambahkan!</div>');
+            redirect('admin/video');
         }
     }
 
@@ -118,17 +179,43 @@ class Admin extends CI_Controller
         redirect('admin/materi');
     }
 
+    public function hapus_video($id)
+    {
+        $data = array(
+            'id' => $id
+        );
+        $this->m_data->hapus_data($data, 'video');
+
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+        Video berhasil dihapus!</div>');
+        redirect('admin/video');
+    }
+
     public function edit_materi($id)
     {
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
-        $data['materi'] = $this->m_data->edit_data($id)->row();
+        $data['materi'] = $this->m_data->edit_data($id);
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/admin/sidebar', $data);
         $this->load->view('templates/admin/topbar', $data);
-        $this->load->view('admin/edit_materi', $data);
+        $this->load->view('admin/materi/edit_materi', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function edit_video($id)
+    {
+        $data['user'] = $this->db->get_where('user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+
+        $data['video'] = $this->m_video->edit_data($id);
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/admin/sidebar', $data);
+        $this->load->view('templates/admin/topbar', $data);
+        $this->load->view('admin/video/edit_video', $data);
         $this->load->view('templates/footer');
     }
 
@@ -137,28 +224,25 @@ class Admin extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
-        $this->form_validation->set_rules('kelas', 'Kelas', 'required', [
-            'required' => 'Kelas harus diisi!'
-        ]);
         $this->form_validation->set_rules('judul', 'Judul', 'required|trim', [
             'required' => 'Judul harus diisi!'
         ]);
-        $this->form_validation->set_rules('url', 'URL', 'required|trim', [
-            'required' => 'URL harus diisi!'
-        ]);
+        if (empty($_FILES['file']['name'])) {
+            $this->form_validation->set_rules('file', 'File', 'required|trim', [
+                'required' => 'File harus diisi!'
+            ]);
+        }
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('templates/header', $data);
             $this->load->view('templates/admin/sidebar', $data);
             $this->load->view('templates/admin/topbar', $data);
-            $this->load->view('admin/edit_materi', $data);
+            $this->load->view('admin/materi/edit_materi', $data);
             $this->load->view('templates/footer');
         } else {
             $id    = $this->input->post('id');
             $kelas = $this->input->post('kelas');
             $judul = $this->input->post('judul');
-            $link  = $this->input->post('url');
-            $link  = preg_replace("#.*youtube\.com/watch\?v=#", "", $link);
             $file  = $_FILES['file'];
 
             if ($file = '') { } else {
@@ -178,7 +262,6 @@ class Admin extends CI_Controller
             $data = array(
                 'kelas' => $kelas,
                 'judul' => $judul,
-                'url'   => $link,
                 'file'  => $file
             );
 
@@ -190,6 +273,51 @@ class Admin extends CI_Controller
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
                 Materi berhasil diperbarui!</div>');
             redirect('admin/materi');
+        }
+    }
+
+    public function updatevid()
+    {
+        $data['user'] = $this->db->get_where('user', ['email' =>
+        $this->session->userdata('email')])->row_array();
+
+        $this->form_validation->set_rules('kelas', 'Kelas', 'required|trim', [
+            'required' => 'Kelas harus diisi!'
+        ]);
+        $this->form_validation->set_rules('judul', 'Judul', 'required|trim', [
+            'required' => 'Judul harus diisi!'
+        ]);
+        $this->form_validation->set_rules('kode', 'URL', 'required|trim', [
+            'required' => 'URL harus diisi!'
+        ]);
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/admin/sidebar', $data);
+            $this->load->view('templates/admin/topbar', $data);
+            $this->load->view('admin/video/edit_video', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $id    = $this->input->post('id');
+            $kelas = $this->input->post('kelas');
+            $judul = $this->input->post('judul');
+            $link = $this->input->post('kode');
+            $link  = preg_replace("#.*youtube\.com/watch\?v=#", "", $link);
+
+            $data = array(
+                'kelas' => $kelas,
+                'judul' => $judul,
+                'kode'  => $link
+            );
+
+            $where = array(
+                'id' => $id
+            );
+
+            $this->m_video->update_data($where, $data, 'video');
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                Materi berhasil diperbarui!</div>');
+            redirect('admin/video');
         }
     }
 

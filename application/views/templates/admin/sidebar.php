@@ -30,8 +30,8 @@
                 <div id="konten" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="<?= base_url('admin/materi');  ?>">Materi</a>
+                        <a class="collapse-item" href="<?= base_url('admin/video');  ?>">Video</a>
                         <a class="collapse-item" href="">Kuis</a>
-                        <a class="collapse-item" href="">Testimoni</a>
                     </div>
                 </div>
             </li>

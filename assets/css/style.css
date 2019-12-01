@@ -42,3 +42,8 @@
 	margin-top: 10px;
 	color: #01579b;
 }
+
+.hr-kelas {
+	width: 100px;
+	border: 1px solid #343a40;
+}
