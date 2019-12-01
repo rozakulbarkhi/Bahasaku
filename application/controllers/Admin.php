@@ -102,7 +102,7 @@ class Admin extends CI_Controller
             $file  = $_FILES['file'];
 
             if ($file = '') { } else {
-                $config['allowed_types']    = 'pdf|doc';
+                $config['allowed_types']    = 'pdf|doc|docx';
                 $config['max_size']         = '2048';
                 $config['upload_path']      = './assets/file/';
 
@@ -246,7 +246,7 @@ class Admin extends CI_Controller
             $file  = $_FILES['file'];
 
             if ($file = '') { } else {
-                $config['allowed_types']    = 'pdf|doc';
+                $config['allowed_types']    = 'pdf|doc|docx';
                 $config['max_size']         = '2048';
                 $config['upload_path']      = './assets/file/';
 
