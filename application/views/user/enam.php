@@ -10,7 +10,7 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/<?= $link; ?>" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="col-5">
-            <h5>Materi Kelas 2 SD</h5>
+            <h5>Materi Kelas 6 SD</h5>
             <?php
             foreach ($video as $v) : ?>
                 <?php
@@ -18,14 +18,14 @@
                     $link  = $v['kode'];
                     ?>
 
-                <a href="?kode= . <?= $link ?>"><?= $judul; ?></a><br><br><br>
+                <a href="?kode= . <?= $link ?>"><?= $judul; ?></a><br>
             <?php endforeach ?>
-
+            <br>
             <h5>Download Materi</h5>
 
             <?php foreach ($materi as $m) : ?>
                 <?php $judul = $m['judul'] ?>
-                <a href="<?= base_url('user/download_enam') ?>"><?= $judul; ?></a><br>
+                <a href="<?= base_url('assets/file/') . $m['file']; ?>"><?= $judul; ?></a><br>
             <?php endforeach; ?>
         </div>
     </div>

@@ -10,6 +10,7 @@ class Admin extends CI_Controller
         cek_admin();
         $this->load->model('m_data');
         $this->load->model('m_video');
+        $this->load->library('pagination');
     }
 
     public function index()

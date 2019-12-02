@@ -18,14 +18,14 @@
                     $link  = $v['kode'];
                     ?>
 
-                <a href="?kode= . <?= $link ?>"><?= $judul; ?></a><br><br><br>
+                <a href="?kode= . <?= $link ?>"><?= $judul; ?></a><br>
             <?php endforeach ?>
-
+            <br>
             <h5>Download Materi</h5>
 
             <?php foreach ($materi as $m) : ?>
                 <?php $judul = $m['judul'] ?>
-                <a href="<?= base_url('user/download_tiga') ?>"><?= $judul; ?></a><br>
+                <a href="<?= base_url('assets/file/') . $m['file'] ?>"><?= $judul; ?></a><br>
             <?php endforeach; ?>
         </div>
     </div>

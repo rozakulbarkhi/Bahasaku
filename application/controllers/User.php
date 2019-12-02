@@ -13,6 +13,8 @@ class User extends CI_Controller
         $this->load->model('m_SMP');
         $this->load->model('m_SMA');
         $this->load->model('m_matSD');
+        $this->load->model('m_matSMP');
+        $this->load->model('m_matSMA');
         $this->load->helper('download');
     }
 
@@ -95,7 +97,7 @@ class User extends CI_Controller
     public function satu()
     {
         $data['video'] = $this->m_SD->satu();
-        $data['materi'] = $this->m_SD->satu();
+        $data['materi'] = $this->m_matSD->satu();
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
@@ -106,20 +108,10 @@ class User extends CI_Controller
         $this->load->view('templates/index/footer', $data);
     }
 
-    public function download_satu()
-    {
-        $data = $this->m_matSD->satu();
-
-        $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
-
-        force_download('assets/file/' . $data['file'], NULL);
-    }
-
     public function dua()
     {
         $data['video'] = $this->m_SD->dua();
-        $data['materi'] = $this->m_SD->dua();
+        $data['materi'] = $this->m_matSD->dua();
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
@@ -130,20 +122,10 @@ class User extends CI_Controller
         $this->load->view('templates/index/footer', $data);
     }
 
-    public function download_dua()
-    {
-        $data = $this->m_matSD->dua();
-
-        $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
-
-        force_download('assets/file/' . $data['file'], NULL);
-    }
-
     public function tiga()
     {
         $data['video'] = $this->m_SD->tiga();
-        $data['materi'] = $this->m_SD->tiga();
+        $data['materi'] = $this->m_matSD->tiga();
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
@@ -154,20 +136,10 @@ class User extends CI_Controller
         $this->load->view('templates/index/footer', $data);
     }
 
-    public function download_tiga()
-    {
-        $data = $this->m_matSD->tiga();
-
-        $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
-
-        force_download('assets/file/' . $data['file'], NULL);
-    }
-
     public function empat()
     {
         $data['video'] = $this->m_SD->empat();
-        $data['materi'] = $this->m_SD->empat();
+        $data['materi'] = $this->m_matSD->empat();
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
@@ -178,20 +150,10 @@ class User extends CI_Controller
         $this->load->view('templates/index/footer', $data);
     }
 
-    public function download_empat()
-    {
-        $data = $this->m_matSD->empat();
-
-        $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
-
-        force_download('assets/file/' . $data['file'], NULL);
-    }
-
     public function lima()
     {
         $data['video'] = $this->m_SD->lima();
-        $data['materi'] = $this->m_SD->lima();
+        $data['materi'] = $this->m_matSD->lima();
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
@@ -202,20 +164,10 @@ class User extends CI_Controller
         $this->load->view('templates/index/footer', $data);
     }
 
-    public function download_lima()
-    {
-        $data = $this->m_matSD->lima();
-
-        $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
-
-        force_download('assets/file/' . $data['file'], NULL);
-    }
-
     public function enam()
     {
         $data['video'] = $this->m_SD->enam();
-        $data['materi'] = $this->m_SD->enam();
+        $data['materi'] = $this->m_matSD->enam();
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
@@ -226,20 +178,11 @@ class User extends CI_Controller
         $this->load->view('templates/index/footer', $data);
     }
 
-    public function download_enam()
-    {
-        $data = $this->m_matSD->enam();
-
-        $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
-
-        force_download('assets/file/' . $data['file'], NULL);
-    }
-
     // SMP
     public function tujuh()
     {
         $data['video'] = $this->m_SMP->tujuh();
+        $data['materi'] = $this->m_matSMP->tujuh();
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
@@ -253,6 +196,7 @@ class User extends CI_Controller
     public function delapan()
     {
         $data['video'] = $this->m_SMP->delapan();
+        $data['materi'] = $this->m_matSMP->delapan();
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
@@ -266,6 +210,7 @@ class User extends CI_Controller
     public function sembilan()
     {
         $data['video'] = $this->m_SMP->sembilan();
+        $data['materi'] = $this->m_matSMP->sembilan();
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
@@ -280,6 +225,7 @@ class User extends CI_Controller
     public function sepuluh()
     {
         $data['video'] = $this->m_SMA->sepuluh();
+        $data['materi'] = $this->m_matSMA->sepuluh();
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
@@ -293,6 +239,7 @@ class User extends CI_Controller
     public function sebelas()
     {
         $data['video'] = $this->m_SMA->sebelas();
+        $data['materi'] = $this->m_matSMA->sebelas();
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
@@ -306,6 +253,7 @@ class User extends CI_Controller
     public function duabelas()
     {
         $data['video'] = $this->m_SMA->duabelas();
+        $data['materi'] = $this->m_matSMA->duabelas();
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
 
