@@ -11,7 +11,10 @@ class m_data extends CI_Model
     function ambil_data_materi()
     {
 
-        return $this->db->get('materi')->result_array();
+        $this->db->order_by('kelas');
+        $query = $this->db->get('materi');
+
+        return $query->result_array();
     }
 
     function input_data($data, $table)

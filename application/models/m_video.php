@@ -10,7 +10,10 @@ class m_video extends CI_Model
     // tampil
     public function ambil_data()
     {
-        return $this->db->get('video')->result_array();
+        $this->db->order_by('kelas');
+        $query = $this->db->get('video');
+
+        return $query->result_array();
     }
 
     // edit

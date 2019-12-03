@@ -30,7 +30,7 @@
             foreach ($materi as $m) {
                 ?>
              <tr>
-                 <td><?= $no++;  ?></td>
+                 <td><?= $no++; ?></td>
                  <td><?= $m['kelas']; ?></td>
                  <td><?= $m['judul']; ?></td>
                  <td><a href=""> <?= $m['file']; ?></a></td>

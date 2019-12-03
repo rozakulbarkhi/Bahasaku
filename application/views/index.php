@@ -110,7 +110,7 @@
   </div>
   <br><br><br>
 
-  <div class="container">
+  <div class="container" id="testi">
     <!-- testimoni -->
     <h2 class="text-center"><strong>Kata Mereka?</strong></h2>
     <hr class="hr-about">
@@ -208,7 +208,7 @@
         <div class="col-md-4 pt-5">
           <a href="#"><img src="<?= base_url() . 'assets/img/logo.png'; ?> " alt=""></a><br><br>
           <a href="#" class="list-footer">Beranda -</a>
-          <a href="#" class="list-footer">Testimoni -</a>
+          <a href="#testi" class="list-footer">Testimoni -</a>
           <a href="#" class="list-footer">Kontak</a><br>
           <p class="list-footer"> Bahasaku &copy; 2019</p>
         </div>
