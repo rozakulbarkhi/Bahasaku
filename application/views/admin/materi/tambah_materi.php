@@ -33,8 +33,8 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="file" class="col-sm-3 col-form-label">Masukkan File</label>
-                <div class="custom-file col-sm-9">
+                <label for="file" class="col-sm-3 col-form-label mr-2">Masukkan File</label>
+                <div class="custom-file col-sm-6">
                     <input type="file" class="custom-file-input" name="file">
                     <label class="custom-file-label" for="file">Pilih file</label>
                     <?= form_error('file', '<small class="text-danger pl-3">', '</small>'); ?>

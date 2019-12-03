@@ -15,7 +15,8 @@
 				<img src="<?= base_url('assets/img/belajar.jpg'); ?>" alt="slide pertama" width="100%">
 				<div class="carousel-caption">
 					<h5 class="carousel"> <strong> Perkembangan E-Learning di Indonesia</strong></h5>
-					<p class="carousel">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit dolore alias reprehenderit pariatur facilis quos, sit soluta quibusdam nemo a quasi, odio, dolorem magni maiores saepe distinctio officiis voluptas. Officia.</p>
+					<p class="carousel">E-Learning sudah berkembang jauh setidaknya tahun 1924 jauh sebelum abad millenium seperti saat ini. Namun perkembangannya semakin cepat seiring dengan perkembangan teknologi seperti komputer, smartphone dan jaringan internet.
+						Institusi pendidikan seperti Perguruan Tinggi dan Sekolah sudah mulai menerapkan pembelajaran jarak jauh berbasis internet ini.</p>
 				</div>
 			</div>
 			<div class="carousel-item">
@@ -36,7 +37,7 @@
 	</div>
 	<br><br><br>
 
-	<div class="container">
+	<div class="container" id="testi">
 		<!-- testimoni -->
 		<h2 class="text-center"><strong>Kata Mereka?</strong></h2>
 		<hr class="hr-about">
@@ -78,7 +79,7 @@
 
 		<div class="container">
 			<h2 class="text-center"><strong>Kenapa harus memilih kami?</strong></h2>
-			<hr class="hr-fitur">
+			<hr class="hr-fitur"><br><br>
 			<div class="row">
 				<div class="col-md-6">
 					<h4 class="pt-5 pr-5"><strong>Berfokus pada Bahasa Indonesia</strong></h4>
@@ -90,6 +91,7 @@
 					<img src="<?= base_url('assets/img/target.png'); ?>" width="200" alt="">
 				</div>
 			</div>
+			<br><br>
 			<div class="row">
 				<div class="col-md-6">
 					<img src="<?= base_url('assets/img/gratiss.png'); ?>" width=" 200" alt="">
@@ -101,7 +103,7 @@
 						ullam, id ea numquam, soluta!</p>
 				</div>
 			</div>
-			<br>
+			<br><br>
 			<div class="row">
 				<div class="col-md-6">
 					<h4 class="pt-5"><strong>Untuk Segala Jenjang</strong></h4>
@@ -113,6 +115,7 @@
 					<img src="<?= base_url('assets/img/luas.png'); ?>" width="200" alt="">
 				</div>
 			</div>
+			<br><br>
 			<div class="row">
 				<div class="col-md-6">
 					<img src="<?= base_url('assets/img/random.png'); ?>" width="250" alt="">
